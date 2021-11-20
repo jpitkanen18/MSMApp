@@ -51,6 +51,10 @@
 		E8C947EA274837600094DBE5 /* MiroCompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiroCompanionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C947EE274837600094DBE5 /* MiroCompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiroCompanionUITests.swift; sourceTree = "<group>"; };
 		E8C947F0274837600094DBE5 /* MiroCompanionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiroCompanionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8E72305274948A4005C527C /* Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Framework; path = ../../Downloads/OpenEarsDistribution/Framework; sourceTree = "<group>"; };
+		E8E72306274948BC005C527C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = ../../Downloads/OpenEarsDistribution/Framework/OpenEars.framework; sourceTree = "<group>"; };
+		E8E7230A274948C7005C527C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = ../../Downloads/OpenEarsDistribution/Framework/Slt.framework; sourceTree = "<group>"; };
+		E8E7230D274948D2005C527C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = ../../Downloads/OpenEarsDistribution/Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				E8C947E3274837600094DBE5 /* MiroCompanionTests */,
 				E8C947ED274837600094DBE5 /* MiroCompanionUITests */,
 				E8C947C82748375F0094DBE5 /* Products */,
+				E8E72304274948A4005C527C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +133,17 @@
 				E8C947F0274837600094DBE5 /* MiroCompanionUITestsLaunchTests.swift */,
 			);
 			path = MiroCompanionUITests;
+			sourceTree = "<group>";
+		};
+		E8E72304274948A4005C527C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8E7230D274948D2005C527C /* AcousticModelEnglish.bundle */,
+				E8E7230A274948C7005C527C /* Slt.framework */,
+				E8E72306274948BC005C527C /* OpenEars.framework */,
+				E8E72305274948A4005C527C /* Framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,14 +457,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5LS6A73R97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiroCompanion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MiroCompanion;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphon used for spech";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We finna do speech magic :3";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,14 +490,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5LS6A73R97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiroCompanion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MiroCompanion;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphon used for spech";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We finna do speech magic :3";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

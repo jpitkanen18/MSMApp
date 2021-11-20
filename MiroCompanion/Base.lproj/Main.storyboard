@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MiroCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95B-i4-s3B">
+                                <rect key="frame" x="20" y="607" width="374" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="95B-i4-s3B" secondAttribute="height" multiplier="187:40" id="0ga-Sz-h3v"/>
+                                    <constraint firstAttribute="height" constant="80" id="fJ4-CG-MTi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="recordingPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A9R-AQ-zgF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1: Press buton. Step 2: Say word of many. Step 3: Magic trick" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUb-Sh-rtN">
+                                <rect key="frame" x="20" y="238" width="374" height="331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pUb-Sh-rtN" secondAttribute="height" multiplier="374:331" id="42m-qm-QC5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lmaodf" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-vr-UdQ">
+                                <rect key="frame" x="141" y="70" width="132" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="CK7-2K-Cos"/>
+                                    <constraint firstAttribute="width" constant="132" id="QPK-91-1OM"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y4I-vr-UdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="3cn-Ob-02v"/>
+                            <constraint firstItem="Y4I-vr-UdQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Rb-gY-DDG"/>
+                            <constraint firstItem="pUb-Sh-rtN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8dZ-gT-uEN"/>
+                            <constraint firstItem="pUb-Sh-rtN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EAF-Nn-5ry"/>
+                            <constraint firstItem="95B-i4-s3B" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LRA-am-YbI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="95B-i4-s3B" secondAttribute="bottom" constant="175" id="coh-Ua-iIh"/>
+                            <constraint firstItem="95B-i4-s3B" firstAttribute="top" secondItem="pUb-Sh-rtN" secondAttribute="bottom" constant="38" id="ubB-Vu-RTe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="95B-i4-s3B" id="vH1-J5-wNd"/>
+                        <outlet property="textLabel" destination="pUb-Sh-rtN" id="lD9-eI-qOA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lmaodf" width="901" height="900"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
