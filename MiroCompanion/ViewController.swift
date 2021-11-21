@@ -10,25 +10,39 @@ import Speech
 
 class ViewController: UIViewController {
     
+    
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     var fullsTring: String?
     var hasrecorded: Bool?
     var timer: Timer!
     var timer2: Timer!
     var timer3: Timer!
     var timer4: Timer!
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_GB"))!
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_IN"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     let audioEngine = AVAudioEngine()
     var buttonColor: UIColor!
+    var boardId: String?
+    var boardName: String?
+    var boardInfo: BoardInfo?
+    var frame: CGRect?
+    var urlNew = URL(string: "" )
+    var lastTranscript = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        urlNew = URL(string: "http://" + ip + "/speech" )!
         recordButton.layer.cornerRadius = 10.0
         buttonColor = recordButton.backgroundColor
+        self.textLabel.text = "Name: " + boardName! + " ID: " + boardId!
         self.recordButton.setTitle("Start Listening", for: .normal)
+        self.sendButton.isEnabled = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         SFSpeechRecognizer.requestAuthorization { (status) in
             switch status {
               case .notDetermined: print("Not determined")
@@ -110,8 +124,10 @@ class ViewController: UIViewController {
                 inputNode.removeTap(onBus: 0)
                 self.fullsTring = result?.bestTranscription.formattedString
                 self.textLabel.text = result?.bestTranscription.formattedString
+                self.lastTranscript = (result?.bestTranscription.formattedString)!
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
+                
                 isFinal = false
                 
             }
@@ -192,7 +208,8 @@ class ViewController: UIViewController {
         self.timer4.invalidate()
         self.timer?.invalidate()
         self.timer2?.invalidate()
-        
+        self.sendButton.isEnabled = true
+    
         if ((self.audioEngine.isRunning)){
             self.audioEngine.stop()
             guard let task = self.recognitionTask else {
@@ -203,6 +220,7 @@ class ViewController: UIViewController {
         }
     }
     var bool = true
+    
     @IBAction func recordingPress(_ sender: Any) {
         if (bool){
             startRecording()
@@ -211,6 +229,42 @@ class ViewController: UIViewController {
         }
         bool = (bool == false)
            
+    }
+    @IBAction func sendPress(_ sender: Any) {
+        speechAPICall(speech: lastTranscript, boardId: boardId!)
+    }
+    
+    func speechAPICall(speech: String, boardId: String){
+        var request = URLRequest(url: urlNew!)
+        request.httpMethod = "POST"
+        let fakeSpeech = "Jesse will do IoT next week"
+        /*"Hello Lorem Ipsum is simply dummy text of alex will do garbage stuff as well as git cleanup you dirty man. the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. world Jesse will do git merge and git commit. Jaisal will do mqtt. Lavan will do installation and cleaning of office and making coffee. Lavan will do macOS updates. Jesse will do AWS server management. Jaisal will do a demo in junction."*/
+        boardInfo?.speech = fakeSpeech
+        do {
+            let jsonData = try JSONEncoder().encode(boardInfo)
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            print(jsonString)
+            request.httpBody = jsonData
+        } catch {
+            print(error)
+            
+        }
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let httpResponse = response as? HTTPURLResponse else {print("Voi helevetin perse, kaikki päin vittua saatana");return}
+                print(httpResponse.statusCode)
+                if httpResponse.statusCode != 200{print("Not great not terrible");return}
+                DispatchQueue.main.async{
+                    // Update your data source here
+                    //self.tableView.reloadSections([0], with: UITableView.RowAnimation.fade)
+                    //self.tableView.reloadData()
+                    self.sendButton.setTitle("Sent!", for: .normal)
+                    self.sendButton.isEnabled = false
+                    
+                }
+            
+        }
+        task.resume()
     }
     
 

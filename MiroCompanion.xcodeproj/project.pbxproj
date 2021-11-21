@@ -17,6 +17,8 @@
 		E8C947E5274837600094DBE5 /* MiroCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C947E4274837600094DBE5 /* MiroCompanionTests.swift */; };
 		E8C947EF274837600094DBE5 /* MiroCompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C947EE274837600094DBE5 /* MiroCompanionUITests.swift */; };
 		E8C947F1274837600094DBE5 /* MiroCompanionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C947F0274837600094DBE5 /* MiroCompanionUITestsLaunchTests.swift */; };
+		E8E723132749794C005C527C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E723122749794C005C527C /* InitialViewController.swift */; };
+		E8E7231727497F37005C527C /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E7231627497F37005C527C /* BoardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		E8E72306274948BC005C527C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = ../../Downloads/OpenEarsDistribution/Framework/OpenEars.framework; sourceTree = "<group>"; };
 		E8E7230A274948C7005C527C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = ../../Downloads/OpenEarsDistribution/Framework/Slt.framework; sourceTree = "<group>"; };
 		E8E7230D274948D2005C527C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = ../../Downloads/OpenEarsDistribution/Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		E8E723122749794C005C527C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		E8E7231627497F37005C527C /* BoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				E8C947CA2748375F0094DBE5 /* AppDelegate.swift */,
 				E8C947CC2748375F0094DBE5 /* SceneDelegate.swift */,
 				E8C947CE2748375F0094DBE5 /* ViewController.swift */,
+				E8E7231627497F37005C527C /* BoardCell.swift */,
+				E8E723122749794C005C527C /* InitialViewController.swift */,
 				E8C947D02748375F0094DBE5 /* Main.storyboard */,
 				E8C947D6274837600094DBE5 /* Assets.xcassets */,
 				E8C947D8274837600094DBE5 /* LaunchScreen.storyboard */,
@@ -279,7 +285,9 @@
 			files = (
 				E8C947CF2748375F0094DBE5 /* ViewController.swift in Sources */,
 				E8C947D52748375F0094DBE5 /* MiroCompanion.xcdatamodeld in Sources */,
+				E8E723132749794C005C527C /* InitialViewController.swift in Sources */,
 				E8C947CB2748375F0094DBE5 /* AppDelegate.swift in Sources */,
+				E8E7231727497F37005C527C /* BoardCell.swift in Sources */,
 				E8C947CD2748375F0094DBE5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
