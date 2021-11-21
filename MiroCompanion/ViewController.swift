@@ -237,9 +237,7 @@ class ViewController: UIViewController {
     func speechAPICall(speech: String, boardId: String){
         var request = URLRequest(url: urlNew!)
         request.httpMethod = "POST"
-        let fakeSpeech = "Jesse will do IoT next week"
-        /*"Hello Lorem Ipsum is simply dummy text of alex will do garbage stuff as well as git cleanup you dirty man. the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. world Jesse will do git merge and git commit. Jaisal will do mqtt. Lavan will do installation and cleaning of office and making coffee. Lavan will do macOS updates. Jesse will do AWS server management. Jaisal will do a demo in junction."*/
-        boardInfo?.speech = fakeSpeech
+        boardInfo?.speech = speech
         do {
             let jsonData = try JSONEncoder().encode(boardInfo)
             let jsonString = String(data: jsonData, encoding: .utf8)!
